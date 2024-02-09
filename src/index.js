@@ -8,7 +8,7 @@
  */
 function calculateFatherAsTwiceOld(fathersAge, sonsAge) {
   let years = 0;
-  if (fathersAge - sonsAge < 15 || sonsAge < 15) {
+  if (fathersAge - sonsAge < 15 || sonsAge < 0) {
     return 'Неправильный ввод данных!'
   }
   if (fathersAge / 2 === sonsAge) {

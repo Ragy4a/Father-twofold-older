@@ -24,4 +24,4 @@ function calculateFatherAsTwiceOld(fathersAge, sonsAge) {
   }
 }
 
-console.log(calculateFatherAsTwiceOld(45, 23));
+console.log(calculateFatherAsTwiceOld(42, 23));

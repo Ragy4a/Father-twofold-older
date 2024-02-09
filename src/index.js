@@ -4,33 +4,22 @@
 /**
  * @param {number} fathersAge - Возраст отца
  * @param {number} sonsAge - Возраст сына
- * @returns {string} - Информация о времени, через сколько лет или сколько лет назад отец будет/был вдвое старше сына
+ * @returns {number} - Информация о времени, через сколько лет или сколько лет назад отец будет/был вдвое старше сына
  */
 // debugger
 function calculateFatherAsTwiceOld(fathersAge, sonsAge) {
   let years = 0;
-  if (fathersAge === 0 || fathersAge < 15) {
+  if (fathersAge - sonsAge < 15 || sonsAge < 15) {
     return 'Неправильный ввод данных!'
-  }
-  if (fathersAge < 0 || sonsAge < 0) {
-    return `Возраст отца и сына должен быть положительным числом.`;
-  }
-  if (fathersAge - sonsAge < 15 && fathersAge - sonsAge > -15) {
-    return 'Разница в возрасте отца и сына должна быть не меньше 15 лет.';
   }
   if (fathersAge / 2 === sonsAge) {
     return `Отец уже вдвое старше сына.`;
   }
-  if (fathersAge < sonsAge * 2) {
+  if (fathersAge < sonsAge * 2 || fathersAge > sonsAge * 2) {
     years = fathersAge - (sonsAge * 2);
-    return `Отец был старше сына вдвое ${-years} лет назад.`;
+    return years > 0  ? `Отец был старше сына вдвое ${years} лет/год/года назад.` :
+    `Отец будет старше сына вдвое ${-years} лет/год/года назад.`;
   }
-  while (fathersAge / 2 > sonsAge) {
-    fathersAge++;
-    sonsAge++;
-    years++;
-  }
-  return `Отец будет старше сына вдвое через ${years} лет.`;
 }
 
-console.log(calculateFatherAsTwiceOld(0, 0));
+console.log(calculateFatherAsTwiceOld(50, 30));

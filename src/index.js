@@ -16,12 +16,12 @@ function calculateFatherAsTwiceOld(fathersAge, sonsAge) {
   }
   if (fathersAge < sonsAge * 2) {
     years = fathersAge - (sonsAge * 2);
-    return `Отец был старше сына вдвое ${-years} лет/год/года.`
+    return `Отец будет старше сына вдвое через ${-years} лет/год/года.`
   }
   if (fathersAge > sonsAge * 2) {
     years = fathersAge - (sonsAge * 2);
-    return `Отец был старше сына вдвое ${years} лет/год/года.`
+    return `Отец был старше сына вдвое ${years} лет/год/года назад.`
   }
 }
 
-console.log(calculateFatherAsTwiceOld(61, 30));
+console.log(calculateFatherAsTwiceOld(45, 23));
